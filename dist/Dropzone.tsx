@@ -556,6 +556,7 @@ class Dropzone extends React.Component<IDropzoneProps, { active: boolean; dragge
 
     formData.append('file', fileWithMeta.file)
     if (this.props.timeout) xhr.timeout = this.props.timeout
+    if (this.props.withCredentials) xhr.withCredentials = true 
     xhr.send(body || formData)
     fileWithMeta.xhr = xhr
     fileWithMeta.meta.status = 'uploading'
